@@ -26,12 +26,12 @@ export default function Section({
       className={`max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ${paddingClasses} ${className}`}
     >
       {(title || showDivider) && (
-        <div className="flex items-end justify-between gap-6 mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 sm:gap-6 mb-8">
           {title && (
-            <h2 className="text-h1 font-semibold text-text text-start shrink-0">{title}</h2>
+            <h2 className="text-xl sm:text-h1 font-semibold text-text text-start min-w-0 break-words">{title}</h2>
           )}
           {showDivider && (
-            <div className="h-px flex-1 bg-white/10 hidden md:block ms-6 min-w-0" />
+            <div className="h-px flex-1 bg-white/10 hidden md:block sm:ms-6 min-w-0" />
           )}
         </div>
       )}
