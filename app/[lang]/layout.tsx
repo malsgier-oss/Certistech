@@ -1,8 +1,12 @@
 import type { Metadata } from "next";
-import { isLang } from "@/lib/i18n";
+import { isLang, LANGS } from "@/lib/i18n";
 import { buildMetadata } from "@/lib/seo";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+
+export function generateStaticParams() {
+  return LANGS.map((lang) => ({ lang }));
+}
 
 export async function generateMetadata({ params }: { params: { lang: string } }): Promise<Metadata> {
   const lang = isLang(params.lang) ? params.lang : "ar";
