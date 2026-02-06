@@ -1,1 +1,5 @@
-export default function Page(){return null;}
+import RedirectToLang from "@/components/RedirectToLang";
+
+export default function Page() {
+  return <RedirectToLang />;
+}
