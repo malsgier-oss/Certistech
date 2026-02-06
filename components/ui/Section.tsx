@@ -23,7 +23,7 @@ export default function Section({
   return (
     <section
       id={id}
-      className={`max-w-7xl mx-auto px-6 md:px-8 ${paddingClasses} ${className}`}
+      className={`max-w-7xl mx-auto px-4 sm:px-6 md:px-8 ${paddingClasses} ${className}`}
     >
       {(title || showDivider) && (
         <div className="flex items-end justify-between gap-6 mb-8">

@@ -53,7 +53,7 @@ export default function Contact({
               placeholder={t["contact.form.message"] as string}
               required
             />
-            <Button type="submit" variant="primary">
+            <Button type="submit" variant="primary" className="min-h-[48px] w-full sm:w-auto">
               {status === "sent"
                 ? lang === "ar"
                   ? "تم الإرسال"

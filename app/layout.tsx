@@ -1,5 +1,14 @@
 import "./globals.css";
 import { Noto_Sans_Arabic, DM_Sans } from "next/font/google";
+import type { Viewport } from "next";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
+  themeColor: "#0B0F14",
+};
 
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],

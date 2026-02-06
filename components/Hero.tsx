@@ -6,7 +6,7 @@ export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknow
   const isAr = lang === "ar";
 
   return (
-    <section className="relative min-h-[92vh] overflow-hidden">
+    <section className="relative min-h-[85vh] sm:min-h-[90vh] md:min-h-[92vh] overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-center scale-[1.02]"
         style={{
@@ -25,14 +25,15 @@ export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknow
         }}
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-8 pt-24 pb-20 grid md:grid-cols-2 gap-12 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 md:px-8 pt-20 sm:pt-24 pb-16 sm:pb-20 grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
         <div>
-          <div className="flex items-center gap-4">
-            <div className="rounded-2xl border border-[rgba(234,242,246,0.18)] bg-surface p-2">
-              <Logo height={48} />
+          <div className="flex flex-col sm:flex-row items-start gap-4">
+            <div className="rounded-2xl border border-[rgba(234,242,246,0.18)] bg-surface p-2 shrink-0">
+              <Logo height={40} className="sm:hidden" />
+              <Logo height={48} className="hidden sm:block" />
             </div>
             <div>
-              <h1 className="text-4xl md:text-5xl font-semibold tracking-tight text-text">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-text">
                 {t["hero.headline"] as string}
               </h1>
               <p className="mt-2 text-body-lg text-accent font-medium">
@@ -45,11 +46,11 @@ export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknow
             {t["hero.subline"] as string}
           </p>
 
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Button href="#contact" variant="primary" size="lg">
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4">
+            <Button href="#contact" variant="primary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center">
               {t["hero.cta.primary"] as string}
             </Button>
-            <Button href="#audita" variant="secondary" size="lg">
+            <Button href="#audita" variant="secondary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center">
               {t["hero.cta.secondary"] as string}
             </Button>
           </div>

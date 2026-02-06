@@ -20,11 +20,11 @@ export default function Products({ lang, t }: { lang: Lang; t: Record<string, un
             </p>
           </div>
 
-          <div className="flex flex-wrap gap-3">
-            <Button href="#contact" variant="primary">
+          <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+            <Button href="#contact" variant="primary" className="min-h-[48px] w-full sm:w-auto">
               {lang === "ar" ? "اطلب عرضًا" : "Request a Demo"}
             </Button>
-            <Button href="#solutions" variant="secondary">
+            <Button href="#solutions" variant="secondary" className="min-h-[48px] w-full sm:w-auto">
               {lang === "ar" ? "الحلول" : "Solutions"}
             </Button>
           </div>
