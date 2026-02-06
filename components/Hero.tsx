@@ -3,8 +3,6 @@ import Logo from "@/components/Logo";
 import Button from "@/components/ui/Button";
 
 export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknown> }) {
-  const isAr = lang === "ar";
-
   return (
     <section className="relative min-h-[85vh] sm:min-h-[90vh] md:min-h-[92vh] overflow-hidden">
       <div
@@ -56,9 +54,7 @@ export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknow
           </div>
 
           <p className="mt-10 text-body-sm text-text-muted/80">
-            {isAr
-              ? "مخصصة للإدارات الرقابية والحوكمة وإدارة المخاطر."
-              : "Built for compliance, governance, and risk teams."}
+            {t["hero.footer"] as string}
           </p>
         </div>
 

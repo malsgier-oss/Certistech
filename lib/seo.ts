@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 
 export function buildMetadata(lang: "ar" | "en"): Metadata {
   const isAr = lang === "ar";
-  const title = isAr ? "سِرْتِس تك | حلول مؤسسية للتدقيق والامتثال" : "CertisTech | Enterprise Audit & Compliance Solutions";
+  const title = isAr ? "سِرْتِس تك | حلول تقنية للتدقيق والامتثال" : "CertisTech | Audit & Document Control Tech Solutions";
   const description = isAr
-    ? "حلول مؤسسية للتدقيق وإدارة المستندات للإدارات الرقابية والحوكمة وإدارة المخاطر — امتثال، تتبّع، وثقة."
+    ? "حلول تقنية للتدقيق وإدارة المستندات — امتثال، تتبّع، وثقة."
     : "Enterprise-grade audit and document control solutions built for compliance, traceability, and trust.";
 
   return {

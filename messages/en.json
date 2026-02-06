@@ -4,10 +4,11 @@
   "hero.subline": "Enterprise-grade audit and document control solutions built for compliance, traceability, and trust.",
   "hero.cta.primary": "Request a Demo",
   "hero.cta.secondary": "View AUDITA",
+  "hero.footer": "Built for teams that value compliance, traceability, and trust.",
   "about.title": "About Us",
-  "about.body": "CertisTech delivers enterprise-grade audit and document control solutions. We combine deep compliance expertise with modern software practices to help institutions achieve traceability, governance, and trust.",
-  "about.vision": "To be the trusted partner for institutions seeking rigorous, auditable, and compliant technology solutions.",
-  "about.mission": "We build software that meets bank-grade standards—enabling compliance, governance, and risk teams to operate with confidence and full traceability.",
+  "about.body": "CertisTech delivers enterprise-grade audit and document control solutions. We combine compliance expertise with modern software practices to help organizations achieve traceability, governance, and trust.",
+  "about.vision": "To be the trusted partner for organizations seeking rigorous, auditable, and compliant technology solutions.",
+  "about.mission": "We build software that meets enterprise-grade standards—enabling teams to operate with confidence, full traceability, and compliance readiness.",
   "about.values": ["Trust", "Rigor", "Compliance-first", "Traceability"],
   "howWeWork.title": "How We Work",
   "howWeWork.methodology": "We follow an iterative, compliance-first approach—agile where it fits, rigorous where it matters.",
@@ -18,14 +19,14 @@
     { "title": "Deploy", "body": "On-prem or local-first deployment with training and handover." },
     { "title": "Support", "body": "Ongoing maintenance, updates, and compliance guidance." }
   ],
-  "standards.title": "Bank-Grade Standards. Built for Institutions.",
-  "standards.body": "We build software aligned with bank-grade standards, designed for institutions that demand strong governance and compliance.",
-  "standards.list": "Serving: Banks, Insurance, Government, Energy, and Large Enterprises.",
+  "standards.title": "Enterprise-Grade Standards. Built for Every Scale.",
+  "standards.body": "We build software aligned with enterprise-grade standards, designed for organizations that value governance, compliance, and traceability.",
+  "standards.list": "Serving: Startups, Enterprises, Government, Healthcare, Energy, and beyond.",
   "solutions.title": "Solutions",
   "solutions.cards": [
     {
       "title": "Audit & Inspection Systems",
-      "body": "Institutional audit workflows with evidence traceability."
+      "body": "Professional audit workflows with evidence traceability."
     },
     {
       "title": "Document Control & Archive",
@@ -46,7 +47,7 @@
   ],
   "products.title": "Product",
   "products.audita.title": "AUDITA",
-  "products.audita.body": "An on\u2011prem audit & archive system built for sensitive institutional environments.",
+  "products.audita.body": "An on\u2011prem audit & archive system built for organizations that need control, traceability, and compliance.",
   "products.audita.features": "On\u2011prem \u2022 Audit trail \u2022 Roles \u2022 Retention \u2022 Compliance-ready",
   "compliance.title": "Compliance & Security",
   "compliance.items": [
@@ -58,7 +59,7 @@
     "Fast deployment & training"
   ],
   "partners.title": "Partners",
-  "partners.body": "We partner with institutions and technology providers to deliver robust, sustainable systems.",
+  "partners.body": "We partner with organizations and technology providers to deliver robust, sustainable systems.",
   "contact.title": "Contact",
   "contact.body": "Need audit, archiving, or a tailored enterprise system?",
   "contact.form.name": "Name",
