@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 
 const baseClasses =
-  "w-full rounded-xl border border-[rgba(234,242,246,0.12)] bg-transparent px-4 py-3 text-sm text-text placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-accent focus:ring-1 focus:ring-accent/30";
+  "w-full rounded-xl border border-[rgba(234,242,246,0.12)] bg-transparent ps-4 pe-4 py-3 text-sm text-text placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-accent focus:ring-1 focus:ring-accent/30 text-start";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;

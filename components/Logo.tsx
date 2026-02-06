@@ -1,54 +1,66 @@
 type LogoProps = {
   className?: string;
   height?: number;
+  /** "light" for dark backgrounds (default), "dark" for light backgrounds */
+  variant?: "light" | "dark";
 };
 
-export default function Logo({ className = "", height = 36 }: LogoProps) {
-  const width = Math.round((220 / 64) * height);
+const NAVY = "#1F3142";
+const TEAL = "#00C2D8";
+const LIGHT = "#EAF2F6";
+
+export default function Logo({
+  className = "",
+  height = 36,
+  variant = "light",
+}: LogoProps) {
+  const isLight = variant === "light";
+  const navy = isLight ? LIGHT : NAVY;
+  const teal = TEAL;
+
+  const width = Math.round((200 / 48) * height);
 
   return (
-    <svg
-      width={width}
-      height={height}
-      viewBox="0 0 220 64"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-label="CertisTech"
-    >
-      <rect
-        x="2"
-        y="2"
-        width="60"
-        height="60"
-        rx="14"
-        fill="#12181A"
-        stroke="rgba(234,242,246,0.18)"
+    <span className={`inline-block [direction:ltr] ${className}`} dir="ltr">
+      <svg
+        width={width}
+        height={height}
+        viewBox="0 0 200 48"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-label="CertisTech"
+      >
+      {/* Hexagon */}
+      <polygon
+        points="24,4 44,14 44,34 24,44 4,34 4,14"
+        fill="none"
+        stroke={navy}
         strokeWidth="2"
       />
+      {/* Checkmark with circuit nodes */}
       <path
-        d="M18 34c6-10 22-10 28 0"
-        stroke="#26C8D0"
-        strokeWidth="3"
+        d="M14 18 L22 26 L34 14"
+        stroke={teal}
+        strokeWidth="2"
         strokeLinecap="round"
+        strokeLinejoin="round"
       />
-      <path
-        d="M18 40c6-10 22-10 28 0"
-        stroke="#BAAC7F"
-        strokeWidth="3"
-        strokeLinecap="round"
-        opacity="0.9"
-      />
+      <circle cx="14" cy="18" r="2" fill={teal} />
+      <circle cx="22" cy="26" r="2" fill={teal} />
+      <circle cx="34" cy="14" r="2" fill={teal} />
+      {/* CERTISTECH: CERTIS in navy, TECH in teal */}
       <text
-        x="78"
-        y="40"
-        fill="#EAF2F6"
+        x="52"
+        y="32"
         fontFamily="inherit"
-        fontSize="22"
+        fontSize="14"
         fontWeight="700"
+        letterSpacing="0.05em"
       >
-        CertisTech
+        <tspan fill={navy}>CERTIS</tspan>
+        <tspan fill={teal}>TECH</tspan>
       </text>
     </svg>
+    </span>
   );
 }

@@ -1,6 +1,11 @@
-<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect x="2" y="2" width="60" height="60" rx="14" fill="#12181A" stroke="rgba(234,242,246,0.18)" stroke-width="2"/>
-  <path d="M18 34c6-10 22-10 28 0" stroke="#26C8D0" stroke-width="3" stroke-linecap="round"/>
-  <path d="M18 40c6-10 22-10 28 0" stroke="#BAAC7F" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
-  <text x="78" y="40" fill="#EAF2F6" font-family="Arial" font-size="22" font-weight="700">CertisTech</text>
+<svg width="200" height="48" viewBox="0 0 200 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <polygon points="24,4 44,14 44,34 24,44 4,34 4,14" fill="none" stroke="#1F3142" stroke-width="2"/>
+  <path d="M14 18 L22 26 L34 14" stroke="#00C2D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="14" cy="18" r="2" fill="#00C2D8"/>
+  <circle cx="22" cy="26" r="2" fill="#00C2D8"/>
+  <circle cx="34" cy="14" r="2" fill="#00C2D8"/>
+  <text x="52" y="32" font-family="sans-serif" font-size="14" font-weight="700" letter-spacing="0.05em">
+    <tspan fill="#1F3142">CERTIS</tspan>
+    <tspan fill="#00C2D8">TECH</tspan>
+  </text>
 </svg>

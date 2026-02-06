@@ -18,7 +18,7 @@ export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknow
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(80% 70% at 20% 45%, rgba(38,200,208,0.35) 0%, rgba(38,200,208,0.00) 60%)," +
+            "radial-gradient(80% 70% at 20% 45%, rgba(0,194,216,0.35) 0%, rgba(0,194,216,0.00) 60%)," +
             "radial-gradient(70% 70% at 8% 35%, rgba(186,172,127,0.28) 0%, rgba(186,172,127,0.00) 62%)," +
             "radial-gradient(120% 90% at 50% 50%, rgba(0,0,0,0.00) 35%, rgba(0,0,0,0.35) 100%)," +
             "rgba(0,0,0,0.55)",

@@ -7,8 +7,8 @@
   --background: #0b0f14;
   --surface: #12181a;
   --surface-elevated: #1a2226;
-  --accent: #26c8d0;
-  --accent-hover: #2dd4de;
+  --accent: #00c2d8;
+  --accent-hover: #00d4e8;
   --gold: #baac7f;
   --gold-hover: #c4b68a;
   --text: #eaf2f6;
@@ -33,6 +33,7 @@ body {
 body {
   background: var(--background);
   color: var(--text);
+  text-align: start;
 }
 
 @layer components {

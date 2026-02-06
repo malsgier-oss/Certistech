@@ -17,7 +17,19 @@ const dmSans = DM_Sans({
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="ar" dir="rtl" className={`${notoSansArabic.variable} ${dmSans.variable}`}>
+    <html
+      lang="ar"
+      dir="rtl"
+      className={`${notoSansArabic.variable} ${dmSans.variable}`}
+      suppressHydrationWarning
+    >
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){var p=location.pathname;var l=p.startsWith('/en')?'en':'ar';var d=l==='en'?'ltr':'rtl';document.documentElement.lang=l;document.documentElement.dir=d;})();`,
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );

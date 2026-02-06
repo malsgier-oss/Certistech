@@ -28,10 +28,10 @@ export default function Section({
       {(title || showDivider) && (
         <div className="flex items-end justify-between gap-6 mb-8">
           {title && (
-            <h2 className="text-h1 font-semibold text-text">{title}</h2>
+            <h2 className="text-h1 font-semibold text-text text-start shrink-0">{title}</h2>
           )}
           {showDivider && (
-            <div className="h-px flex-1 bg-white/10 hidden md:block" />
+            <div className="h-px flex-1 bg-white/10 hidden md:block ms-6 min-w-0" />
           )}
         </div>
       )}
