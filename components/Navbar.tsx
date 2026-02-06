@@ -12,10 +12,11 @@ function setLangCookie(lang: Lang) {
 }
 
 const navLinks = [
+  { href: "#about", ar: "من نحن", en: "About" },
   { href: "#solutions", ar: "الحلول", en: "Solutions" },
   { href: "#audita", ar: "AUDITA", en: "AUDITA" },
   { href: "#standards", ar: "المعايير", en: "Standards" },
-  { href: "#partners", ar: "الشركاء", en: "Partners" },
+  { href: "#how-we-work", ar: "كيف نعمل", en: "How We Work" },
   { href: "#contact", ar: "تواصل", en: "Contact" },
 ];
 
