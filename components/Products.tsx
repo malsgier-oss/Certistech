@@ -1,27 +1,35 @@
 import type { Lang } from "@/lib/i18n";
+import Section from "@/components/ui/Section";
+import Card from "@/components/ui/Card";
+import Button from "@/components/ui/Button";
 
-export default function Products({ lang, t }: { lang: Lang; t: any }) {
+export default function Products({ lang, t }: { lang: Lang; t: Record<string, unknown> }) {
   return (
-    <section id="audita" className="max-w-7xl mx-auto px-6 py-16">
-      <div className="flex items-end justify-between gap-6">
-        <h2 className="text-2xl md:text-3xl font-semibold">{t["products.title"]}</h2>
-        <div className="h-px flex-1 bg-white/10 hidden md:block" />
-      </div>
-
-      <div className="mt-8 card">
+    <Section id="audita" title={t["products.title"] as string}>
+      <Card className="p-8">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
           <div>
-            <h3 className="text-xl font-semibold">{t["products.audita.title"]}</h3>
-            <p className="mt-3 text-gray-200 leading-relaxed">{t["products.audita.body"]}</p>
-            <p className="mt-4 text-sm text-gray-300">{t["products.audita.features"]}</p>
+            <h3 className="text-h2 font-semibold text-text">
+              {t["products.audita.title"] as string}
+            </h3>
+            <p className="mt-3 text-body text-text leading-relaxed">
+              {t["products.audita.body"] as string}
+            </p>
+            <p className="mt-4 text-body-sm text-text-muted">
+              {t["products.audita.features"] as string}
+            </p>
           </div>
 
-          <div className="flex gap-3">
-            <a href="#contact" className="btn-primary">{lang === "ar" ? "اطلب عرضًا" : "Request a Demo"}</a>
-            <a href="#solutions" className="btn-secondary">{lang === "ar" ? "الحلول" : "Solutions"}</a>
+          <div className="flex flex-wrap gap-3">
+            <Button href="#contact" variant="primary">
+              {lang === "ar" ? "اطلب عرضًا" : "Request a Demo"}
+            </Button>
+            <Button href="#solutions" variant="secondary">
+              {lang === "ar" ? "الحلول" : "Solutions"}
+            </Button>
           </div>
         </div>
-      </div>
-    </section>
+      </Card>
+    </Section>
   );
 }

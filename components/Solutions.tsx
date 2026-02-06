@@ -1,22 +1,44 @@
 import type { Lang } from "@/lib/i18n";
+import {
+  FileSearch,
+  FolderArchive,
+  LayoutDashboard,
+  GitBranch,
+  Code2,
+} from "lucide-react";
+import Section from "@/components/ui/Section";
+import Card from "@/components/ui/Card";
 
-export default function Solutions({ lang, t }: { lang: Lang; t: any }) {
+const SOLUTION_ICONS = [
+  FileSearch,
+  FolderArchive,
+  LayoutDashboard,
+  GitBranch,
+  Code2,
+];
+
+export default function Solutions({ t }: { lang: Lang; t: Record<string, unknown> }) {
   const cards = t["solutions.cards"] as Array<{ title: string; body: string }>;
-  return (
-    <section id="solutions" className="max-w-7xl mx-auto px-6 py-16">
-      <div className="flex items-end justify-between gap-6">
-        <h2 className="text-2xl md:text-3xl font-semibold">{t["solutions.title"]}</h2>
-        <div className="h-px flex-1 bg-white/10 hidden md:block" />
-      </div>
 
-      <div className="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {cards.map((c, idx) => (
-          <div key={idx} className="card">
-            <h3 className="text-lg font-semibold">{c.title}</h3>
-            <p className="mt-3 text-gray-200 text-sm leading-relaxed">{c.body}</p>
-          </div>
-        ))}
+  return (
+    <Section id="solutions" title={t["solutions.title"] as string}>
+      <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+        {cards.map((c, idx) => {
+          const Icon = SOLUTION_ICONS[idx] ?? FileSearch;
+          return (
+            <Card
+              key={idx}
+              icon={<Icon className="w-5 h-5 text-accent" />}
+              title={c.title}
+              elevated
+            >
+              <p className="mt-3 text-body-sm text-text-muted leading-relaxed">
+                {c.body}
+              </p>
+            </Card>
+          );
+        })}
       </div>
-    </section>
+    </Section>
   );
 }
