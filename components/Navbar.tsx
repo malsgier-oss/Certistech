@@ -15,12 +15,12 @@ export default function Navbar({ lang }: { lang: Lang }) {
 
   return (
     <header className="sticky top-0 z-50 backdrop-blur-md border-b border-[rgba(234,242,246,0.10)] bg-background/80">
-      <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 md:px-8 py-4 flex items-center justify-between gap-4 overflow-visible">
         <Link
           href={isAr ? "/ar" : "/en"}
-          className="flex items-center gap-3 transition-opacity hover:opacity-90"
+          className="flex shrink-0 items-center transition-opacity hover:opacity-90"
         >
-          <Logo height={36} />
+          <Logo height={36} className="shrink-0" />
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-text-muted">

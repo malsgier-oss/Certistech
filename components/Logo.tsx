@@ -21,7 +21,11 @@ export default function Logo({
   const width = Math.round((200 / 48) * height);
 
   return (
-    <span className={`inline-block [direction:ltr] ${className}`} dir="ltr">
+    <span
+      className={`inline-block shrink-0 overflow-visible [direction:ltr] ${className}`}
+      dir="ltr"
+      style={{ unicodeBidi: "isolate", minWidth: `${width}px` }}
+    >
       <svg
         width={width}
         height={height}
@@ -29,6 +33,7 @@ export default function Logo({
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="CertisTech"
+        className="overflow-visible"
       >
       {/* Hexagon */}
       <polygon
@@ -52,6 +57,7 @@ export default function Logo({
       <text
         x="52"
         y="32"
+        textAnchor="start"
         fontFamily="inherit"
         fontSize="14"
         fontWeight="700"
