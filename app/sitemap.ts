@@ -1,4 +1,7 @@
+export const dynamic = "force-static";
+
 import type { MetadataRoute } from "next";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = "https://certistech.com";
   return [
