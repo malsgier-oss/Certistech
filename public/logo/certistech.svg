@@ -1,0 +1,6 @@
+<svg width="220" height="64" viewBox="0 0 220 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#12181A" stroke="rgba(234,242,246,0.18)" stroke-width="2"/>
+  <path d="M18 34c6-10 22-10 28 0" stroke="#26C8D0" stroke-width="3" stroke-linecap="round"/>
+  <path d="M18 40c6-10 22-10 28 0" stroke="#BAAC7F" stroke-width="3" stroke-linecap="round" opacity="0.9"/>
+  <text x="78" y="40" fill="#EAF2F6" font-family="Arial" font-size="22" font-weight="700">CertisTech</text>
+</svg>

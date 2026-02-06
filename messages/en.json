@@ -1,0 +1,55 @@
+{
+  "hero.tagline": "Validated. Verified. Certified.",
+  "hero.headline": "CertisTech",
+  "hero.subline": "Enterprise-grade audit and document control solutions built for compliance, traceability, and trust.",
+  "hero.cta.primary": "Request a Demo",
+  "hero.cta.secondary": "View AUDITA",
+  "standards.title": "Bank-Grade Standards. Built for Institutions.",
+  "standards.body": "We build software aligned with bank-grade standards, designed for institutions that demand strong governance and compliance.",
+  "standards.list": "Serving: Banks, Insurance, Government, Energy, and Large Enterprises.",
+  "solutions.title": "Solutions",
+  "solutions.cards": [
+    {
+      "title": "Audit & Inspection Systems",
+      "body": "Institutional audit workflows with evidence traceability."
+    },
+    {
+      "title": "Document Control & Archive",
+      "body": "Archiving, indexing, and retention policies with rigor."
+    },
+    {
+      "title": "Risk & Governance Dashboards",
+      "body": "Dashboards for governance and risk visibility."
+    },
+    {
+      "title": "Workflow & Task Distribution",
+      "body": "Assign tasks, track progress, manage teams effectively."
+    },
+    {
+      "title": "Tailored Enterprise Applications",
+      "body": "We build bespoke enterprise applications to your specifications."
+    }
+  ],
+  "products.title": "Product",
+  "products.audita.title": "AUDITA",
+  "products.audita.body": "An on\u2011prem audit & archive system built for sensitive institutional environments.",
+  "products.audita.features": "On\u2011prem \u2022 Audit trail \u2022 Roles \u2022 Retention \u2022 Compliance-ready",
+  "compliance.title": "Compliance & Security",
+  "compliance.items": [
+    "Local\u2011First / On\u2011Prem design",
+    "Audit trail & chain of custody",
+    "Enforceable retention policies",
+    "Tamper evidence & controls",
+    "Governance & risk readiness",
+    "Fast deployment & training"
+  ],
+  "partners.title": "Partners",
+  "partners.body": "We partner with institutions and technology providers to deliver robust, sustainable systems.",
+  "contact.title": "Contact",
+  "contact.body": "Need audit, archiving, or a tailored enterprise system?",
+  "contact.form.name": "Name",
+  "contact.form.email": "Email",
+  "contact.form.org": "Organization",
+  "contact.form.message": "Message",
+  "contact.form.submit": "Send"
+}

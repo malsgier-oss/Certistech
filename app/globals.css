@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+html, body { height: 100%; }
+body { background: #0B0F14; color: #EAF2F6; }
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium;
+    background: linear-gradient(135deg, theme(colors.accent), theme(colors.gold));
+    color: #0B0F14;
+  }
+  .btn-primary:hover { filter: brightness(1.05); }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-xl px-5 py-3 text-sm font-medium border;
+    border-color: rgba(234,242,246,0.18);
+    background: rgba(18,24,26,0.55);
+  }
+  .btn-secondary:hover { background: rgba(18,24,26,0.75); }
+  .card {
+    @apply rounded-2xl border p-6;
+    border-color: rgba(234,242,246,0.12);
+    background: rgba(18,24,26,0.55);
+    backdrop-filter: blur(10px);
+  }
+}
