@@ -1,5 +1,6 @@
 /* Audita Demo - Light theme only */
 .audita-demo {
+  color-scheme: light;
   --audita-title: #f3f3f3;
   --audita-sidebar: #e8e8e8;
   --audita-content: #ffffff;
@@ -19,4 +20,28 @@
   --audita-warning-text: #856404;
   --audita-disabled: #6b7280;
   --audita-error: #c50f1f;
+}
+
+/* Light backgrounds for all form controls */
+.audita-demo input,
+.audita-demo select,
+.audita-demo textarea {
+  background-color: #ffffff !important;
+  color: #1e1e1e !important;
+}
+
+.audita-demo input::placeholder,
+.audita-demo textarea::placeholder {
+  color: #6b7280;
+}
+
+.audita-demo select option {
+  background-color: #ffffff;
+  color: #1e1e1e;
+}
+
+/* Secondary buttons: explicit light background */
+.audita-demo button[style*="borderColor"]:not([style*="var(--audita-accent)"]) {
+  background-color: #ffffff;
+  color: #1e1e1e;
 }

@@ -27,9 +27,12 @@ export default function WorkspaceView() {
               type="text"
               placeholder="Search"
               className="flex-1 px-2 py-1.5 rounded text-xs border"
-              style={{ borderColor: "var(--audita-border)" }}
+              style={{ borderColor: "var(--audita-border)", backgroundColor: "#ffffff", color: "#1e1e1e" }}
             />
-            <button className="px-2 py-1.5 rounded text-xs" style={{ backgroundColor: "var(--audita-btn-hover)" }}>
+            <button className="px-2 py-1.5 rounded text-xs border" style={{ borderColor: "var(--audita-border)", backgroundColor: "#ffffff", color: "#1e1e1e" }}>
+              Search
+            </button>
+            <button className="px-2 py-1.5 rounded text-xs border" style={{ borderColor: "var(--audita-border)", backgroundColor: "#ffffff", color: "#1e1e1e" }}>
               Clear
             </button>
           </div>
