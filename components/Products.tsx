@@ -21,6 +21,9 @@ export default function Products({ lang, t }: { lang: Lang; t: Record<string, un
           </div>
 
           <div className="flex flex-col sm:flex-row flex-wrap gap-3">
+            <Button href={`/${lang}/audita-demo`} variant="secondary" className="min-h-[48px] w-full sm:w-auto">
+              {lang === "ar" ? "عرض التجربة" : "View Demo"}
+            </Button>
             <Button href="#contact" variant="primary" className="min-h-[48px] w-full sm:w-auto">
               {lang === "ar" ? "اطلب عرضًا" : "Request a Demo"}
             </Button>

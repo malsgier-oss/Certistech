@@ -1,0 +1,22 @@
+/* Audita Demo - Light theme only */
+.audita-demo {
+  --audita-title: #f3f3f3;
+  --audita-sidebar: #e8e8e8;
+  --audita-content: #ffffff;
+  --audita-fg: #1e1e1e;
+  --audita-dim: #333333;
+  --audita-alt-row: #f8f8f8;
+  --audita-border: #e0e0e0;
+  --audita-btn-hover: #e0e0e0;
+  --audita-btn-pressed: #d0d0d0;
+  --audita-accent: #0078d4;
+  --audita-accent-hover: #106ebe;
+  --audita-success: #28a745;
+  --audita-progress: #107c10;
+  --audita-error: #c50f1f;
+  --audita-warning-bg: #fff3cd;
+  --audita-warning-border: #ffc107;
+  --audita-warning-text: #856404;
+  --audita-disabled: #6b7280;
+  --audita-error: #c50f1f;
+}

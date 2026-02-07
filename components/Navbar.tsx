@@ -14,7 +14,7 @@ function setLangCookie(lang: Lang) {
 const navLinks = [
   { href: "#about", ar: "من نحن", en: "About" },
   { href: "#solutions", ar: "الحلول", en: "Solutions" },
-  { href: "#audita", ar: "AUDITA", en: "AUDITA" },
+  { href: "#audita", path: "audita-demo", ar: "AUDITA", en: "AUDITA" },
   { href: "#standards", ar: "المعايير", en: "Standards" },
   { href: "#how-we-work", ar: "كيف نعمل", en: "How We Work" },
   { href: "#contact", ar: "تواصل", en: "Contact" },
@@ -41,15 +41,15 @@ export default function Navbar({ lang }: { lang: Lang }) {
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 text-sm text-text-muted">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              className="hover:text-text transition-colors duration-200"
-              href={link.href}
-            >
-              {isAr ? link.ar : link.en}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const base = isAr ? "/ar" : "/en";
+            const url = link.path ? `${base}/${link.path}` : `${base}${link.href}`;
+            return (
+              <Link key={link.path ?? link.href} href={url} className="hover:text-text transition-colors duration-200">
+                {isAr ? link.ar : link.en}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="flex items-center gap-2">
@@ -80,16 +80,20 @@ export default function Navbar({ lang }: { lang: Lang }) {
         }`}
       >
         <nav className="flex flex-col border-t border-[rgba(234,242,246,0.10)] bg-background/95 backdrop-blur-md px-4 py-4 gap-1">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              onClick={() => setMobileOpen(false)}
-              className="py-3 px-4 rounded-xl text-text hover:bg-surface-elevated transition-colors min-h-[48px] flex items-center"
-            >
-              {isAr ? link.ar : link.en}
-            </a>
-          ))}
+          {navLinks.map((link) => {
+            const base = isAr ? "/ar" : "/en";
+            const url = link.path ? `${base}/${link.path}` : `${base}${link.href}`;
+            return (
+              <Link
+                key={link.path ?? link.href}
+                href={url}
+                onClick={() => setMobileOpen(false)}
+                className="py-3 px-4 rounded-xl text-text hover:bg-surface-elevated transition-colors min-h-[48px] flex items-center"
+              >
+                {isAr ? link.ar : link.en}
+              </Link>
+            );
+          })}
         </nav>
       </div>
     </header>

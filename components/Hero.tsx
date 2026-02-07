@@ -48,7 +48,7 @@ export default function Hero({ lang, t }: { lang: Lang; t: Record<string, unknow
             <Button href="#contact" variant="primary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center">
               {t["hero.cta.primary"] as string}
             </Button>
-            <Button href="#audita" variant="secondary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center">
+            <Button href={`/${lang}/audita-demo`} variant="secondary" size="lg" className="min-h-[48px] w-full sm:w-auto justify-center">
               {t["hero.cta.secondary"] as string}
             </Button>
           </div>
