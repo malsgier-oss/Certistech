@@ -7,7 +7,10 @@ import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
 import { Input, Textarea } from "@/components/ui/Input";
 
-const CONTACT_EMAIL = "Info@certistech.com";
+const CONTACT_EMAIL = "admin@certistech.com";
+
+const FORMSPREE_FORM_ID = process.env.NEXT_PUBLIC_FORMSPREE_FORM_ID ?? "xpqjwgon";
+const FORMSPREE_URL = `https://formspree.io/f/${FORMSPREE_FORM_ID}`;
 
 export default function Contact({
   lang,
@@ -16,21 +19,32 @@ export default function Contact({
   lang: Lang;
   t: Record<string, unknown>;
 }) {
-  const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
-  function onSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const form = e.currentTarget;
     const name = (form.elements.namedItem("name") as HTMLInputElement)?.value ?? "";
     const email = (form.elements.namedItem("email") as HTMLInputElement)?.value ?? "";
     const org = (form.elements.namedItem("org") as HTMLInputElement)?.value ?? "";
     const message = (form.elements.namedItem("message") as HTMLTextAreaElement)?.value ?? "";
-    const subject = encodeURIComponent(`Contact from ${name}${org ? ` (${org})` : ""}`);
-    const body = encodeURIComponent(
-      `${message}\n\n---\nFrom: ${name}\nEmail: ${email}${org ? `\nOrganization: ${org}` : ""}`
-    );
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-    setStatus("sent");
+
+    setStatus("sending");
+    try {
+      const res = await fetch(FORMSPREE_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, org, message }),
+      });
+      if (res.ok) {
+        setStatus("sent");
+        form.reset();
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   }
 
   return (
@@ -58,9 +72,11 @@ export default function Contact({
               {lang === "ar" ? "الهاتف / واتساب:" : "Phone / WhatsApp:"}
             </p>
             <p className="text-text">
-              <a href="https://wa.me/218910429084" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
-                {t["contact.phone"] as string}
-              </a>
+              <span dir="ltr">
+                <a href="https://wa.me/218910429084" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors">
+                  {t["contact.phone"] as string}
+                </a>
+              </span>
             </p>
             <p className="text-text-muted">
               {lang === "ar" ? "البريد الإلكتروني:" : "Email:"}
@@ -96,12 +112,28 @@ export default function Contact({
               required
               className="min-h-[180px]"
             />
-            <Button type="submit" variant="primary" className="min-h-[48px] w-full sm:w-auto">
-              {status === "sent"
+            {status === "error" && (
+              <p className="text-body-sm text-red-400">
+                {lang === "ar"
+                  ? "حدث خطأ. تحقق من إعدادات النموذج أو حاول لاحقاً."
+                  : "Something went wrong. Check form setup or try again later."}
+              </p>
+            )}
+            <Button
+              type="submit"
+              variant="primary"
+              className="min-h-[48px] w-full sm:w-auto"
+              disabled={status === "sending"}
+            >
+              {status === "sending"
                 ? lang === "ar"
-                  ? "تم الإرسال"
-                  : "Sent"
-                : (t["contact.form.submit"] as string)}
+                  ? "جاري الإرسال..."
+                  : "Sending..."
+                : status === "sent"
+                  ? lang === "ar"
+                    ? "تم الإرسال"
+                    : "Sent"
+                  : (t["contact.form.submit"] as string)}
             </Button>
           </form>
         </Card>
