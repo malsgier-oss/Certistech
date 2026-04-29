@@ -23,7 +23,7 @@ export default function Card({
         card
         ${elevated ? "card--elevated" : ""}
         hover:border-accent-soft/60 hover:bg-surface-elevated
-        transition-all duration-250
+        transition-all duration-300
         ${className}
       `}
     >

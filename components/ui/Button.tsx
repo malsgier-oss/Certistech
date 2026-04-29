@@ -39,7 +39,7 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-250 disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed";
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   if (href) {

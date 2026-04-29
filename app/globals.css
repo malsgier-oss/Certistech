@@ -152,7 +152,7 @@ section {
   }
 
   .card {
-    @apply rounded-2xl border p-6 transition-all duration-250;
+    @apply rounded-2xl border p-6 transition-all duration-300;
     border-color: theme(colors["border-subtle"]);
     background: color-mix(in srgb, var(--surface) 85%, transparent);
     backdrop-filter: blur(10px);
