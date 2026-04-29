@@ -28,9 +28,14 @@ export default function Solutions({ t }: { lang: Lang; t: Record<string, unknown
           return (
             <Card
               key={idx}
-              icon={<Icon className="w-5 h-5 text-accent" />}
+              icon={
+                <div className="w-10 h-10 rounded-xl border border-[rgba(180,191,204,0.24)] bg-accent/10 flex items-center justify-center">
+                  <Icon className="w-5 h-5 text-accent" />
+                </div>
+              }
               title={c.title}
               elevated
+              className="h-full"
             >
               <p className="mt-3 text-body-sm text-text-muted leading-relaxed">
                 {c.body}

@@ -1,7 +1,7 @@
 import type { InputHTMLAttributes, TextareaHTMLAttributes } from "react";
 
 const baseClasses =
-  "w-full rounded-xl border border-[rgba(234,242,246,0.12)] bg-transparent ps-4 pe-4 py-3.5 min-h-[48px] text-base sm:text-sm text-text placeholder:text-text-muted outline-none transition-colors duration-200 focus:border-accent focus:ring-1 focus:ring-accent/30 text-start";
+  "w-full rounded-xl border border-[rgba(180,191,204,0.25)] bg-surface-alt ps-4 pe-4 py-3.5 min-h-[48px] text-base sm:text-sm text-text placeholder:text-text-subtle outline-none transition-colors duration-250 focus:border-accent focus:ring-1 focus:ring-accent/30 text-start";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label?: string;
@@ -22,7 +22,7 @@ export function Input({
         </label>
       )}
       <input
-        className={`${baseClasses} ${error ? "border-red-500" : ""} ${className}`}
+        className={`${baseClasses} ${error ? "border-error/80 ring-1 ring-error/30" : ""} ${className}`}
         {...props}
       />
       {error && <p className="text-body-sm text-red-500">{error}</p>}
@@ -49,7 +49,7 @@ export function Textarea({
         </label>
       )}
       <textarea
-        className={`${baseClasses} min-h-[120px] ${error ? "border-red-500" : ""} ${className}`}
+        className={`${baseClasses} min-h-[120px] ${error ? "border-error/80 ring-1 ring-error/30" : ""} ${className}`}
         {...props}
       />
       {error && <p className="text-body-sm text-red-500">{error}</p>}

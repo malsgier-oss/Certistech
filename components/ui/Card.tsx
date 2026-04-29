@@ -20,9 +20,10 @@ export default function Card({
   return (
     <div
       className={`
-        rounded-2xl border border-[rgba(234,242,246,0.12)] bg-surface p-6 backdrop-blur-sm
-        transition-all duration-200
-        ${elevated ? "hover:bg-surface-elevated hover:border-[rgba(234,242,246,0.18)]" : ""}
+        card
+        ${elevated ? "card--elevated" : ""}
+        hover:border-accent-soft/60 hover:bg-surface-elevated
+        transition-all duration-250
         ${className}
       `}
     >

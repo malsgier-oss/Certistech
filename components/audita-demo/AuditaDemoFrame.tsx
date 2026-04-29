@@ -46,12 +46,11 @@ export default function AuditaDemoFrame() {
 
   return (
     <div
-      className="audita-demo flex flex-col rounded-lg overflow-hidden shadow-2xl"
+      className="audita-demo relative flex flex-col overflow-hidden rounded-xl border border-[rgba(180,191,204,0.2)] shadow-panel bg-surface"
       style={{
-        minWidth: 800,
         minHeight: 500,
-        width: 1100,
-        height: 700,
+        width: "100%",
+        height: "min(760px, 78vh)",
         backgroundColor: "var(--audita-content)",
         color: "var(--audita-fg)",
       }}

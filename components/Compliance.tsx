@@ -10,9 +10,11 @@ export default function Compliance({ lang, t }: { lang: Lang; t: Record<string, 
     <Section id="compliance" title={t["compliance.title"] as string}>
       <div className="grid md:grid-cols-2 gap-6">
         {items.map((it, idx) => (
-          <Card key={idx} elevated>
+          <Card key={idx} elevated className="p-6">
             <div className="flex items-start gap-3">
-              <ShieldCheck className="w-4 h-4 text-accent shrink-0 mt-0.5" />
+              <div className="shrink-0 rounded-lg border border-accent/25 bg-accent/10 p-2">
+                <ShieldCheck className="w-4 h-4 text-accent" />
+              </div>
               <p className="text-body-sm text-text leading-relaxed">{it}</p>
             </div>
           </Card>

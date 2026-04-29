@@ -5,7 +5,7 @@ import Card from "@/components/ui/Card";
 export default function Standards({ lang, t }: { lang: Lang; t: Record<string, unknown> }) {
   return (
     <Section id="standards" title={t["standards.title"] as string}>
-      <Card>
+      <Card className="p-8">
         <p className="text-body text-text leading-relaxed">
           {t["standards.body"] as string}
         </p>

@@ -22,11 +22,10 @@ const sizeClasses: Record<ButtonSize, string> = {
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    "bg-gradient-to-br from-accent to-gold text-background font-medium hover:brightness-105 transition-all duration-200",
+    "btn-primary font-semibold",
   secondary:
-    "border border-[rgba(234,242,246,0.18)] bg-surface text-text hover:bg-surface-elevated transition-all duration-200",
-  ghost:
-    "bg-transparent text-text hover:text-accent transition-all duration-200",
+    "btn-secondary font-semibold",
+  ghost: "bg-transparent text-text-muted hover:text-text transition-all duration-200",
 };
 
 export default function Button({
@@ -40,7 +39,7 @@ export default function Button({
   onClick,
 }: ButtonProps) {
   const baseClasses =
-    "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
+    "inline-flex items-center justify-center rounded-xl font-medium transition-all duration-250 disabled:opacity-50 disabled:cursor-not-allowed";
   const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   if (href) {

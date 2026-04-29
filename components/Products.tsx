@@ -8,7 +8,8 @@ export default function Products({ lang, t }: { lang: Lang; t: Record<string, un
     <Section id="audita" title={t["products.title"] as string}>
       <Card className="p-8">
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-8">
-          <div>
+          <div className="max-w-2xl">
+            <p className="status-pill inline-flex mb-4">{lang === "ar" ? "منتجنا الرئيسي" : "Core product suite"}</p>
             <h3 className="text-h2 font-semibold text-text">
               {t["products.audita.title"] as string}
             </h3>
@@ -27,6 +28,13 @@ export default function Products({ lang, t }: { lang: Lang; t: Record<string, un
             <Button href="#solutions" variant="secondary" className="min-h-[48px] w-full sm:w-auto">
               {lang === "ar" ? "الحلول" : "Solutions"}
             </Button>
+          </div>
+          <div className="w-full md:w-[320px] rounded-2xl border border-[rgba(180,191,204,0.22)] bg-surface-alt p-4">
+            <p className="text-text-muted text-sm">
+              {lang === "ar"
+                ? "الأتمتة التشغيلية وإدارة الامتثال"
+                : "Operational automation and compliance orchestration"}
+            </p>
           </div>
         </div>
       </Card>

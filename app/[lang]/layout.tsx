@@ -16,12 +16,15 @@ export async function generateMetadata({ params }: { params: { lang: string } })
 
 export default function LangLayout({ children, params }: { children: React.ReactNode; params: { lang: string } }) {
   const lang = isLang(params.lang) ? params.lang : "ar";
+
   return (
-    <>
+    <div className="page-shell overflow-hidden">
       <LangAttributes lang={lang} />
       <Navbar lang={lang} />
-      {children}
+      <main id="top" className="relative">
+        {children}
+      </main>
       <Footer lang={lang} />
-    </>
+    </div>
   );
 }

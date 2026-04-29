@@ -14,7 +14,7 @@ export default async function Home({ params }: { params: { lang: string } }) {
   const t = await getMessages(lang);
 
   return (
-    <main>
+    <main className="pb-4">
       <Hero lang={lang} t={t} />
       <About lang={lang} t={t} />
       <Standards lang={lang} t={t} />

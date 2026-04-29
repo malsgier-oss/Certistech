@@ -50,7 +50,7 @@ export default function Contact({
   return (
     <Section id="contact" title={t["contact.title"] as string}>
       <div className="grid md:grid-cols-2 gap-6">
-        <Card>
+        <Card className="p-8">
           <p className="text-body text-text leading-relaxed">
             {t["contact.body"] as string}
           </p>
@@ -59,7 +59,7 @@ export default function Contact({
               ? "أرسل طلبك وسنتواصل معك عبر البريد الإلكتروني."
               : "Send your request and we will respond by email."}
           </p>
-          <div className="mt-6 pt-6 border-t border-[rgba(234,242,246,0.12)] space-y-3 text-body-sm">
+          <div className="mt-6 pt-6 border-t border-[rgba(180,191,204,0.14)] space-y-3 text-body-sm">
             <p className="text-text-muted">
               {lang === "ar" ? "العنوان:" : "Address:"}
             </p>
@@ -89,40 +89,28 @@ export default function Contact({
           </div>
         </Card>
 
-        <Card>
+        <Card className="p-8">
           <form onSubmit={onSubmit} className="grid gap-4">
-            <Input
-              name="name"
-              placeholder={t["contact.form.name"] as string}
-              required
-            />
-            <Input
-              name="email"
-              placeholder={t["contact.form.email"] as string}
-              type="email"
-              required
-            />
-            <Input
-              name="org"
-              placeholder={t["contact.form.org"] as string}
-            />
-            <Textarea
-              name="message"
-              placeholder={t["contact.form.message"] as string}
-              required
-              className="min-h-[180px]"
-            />
+            <Input name="name" placeholder={t["contact.form.name"] as string} required />
+            <Input name="email" placeholder={t["contact.form.email"] as string} type="email" required />
+            <Input name="org" placeholder={t["contact.form.org"] as string} />
+            <Textarea name="message" placeholder={t["contact.form.message"] as string} required className="min-h-[180px]" />
             {status === "error" && (
-              <p className="text-body-sm text-red-400">
+              <p className="text-body-sm text-error">
                 {lang === "ar"
                   ? "حدث خطأ. تحقق من إعدادات النموذج أو حاول لاحقاً."
                   : "Something went wrong. Check form setup or try again later."}
               </p>
             )}
+            {status === "sent" && (
+              <p className="text-body-sm text-success">
+                {lang === "ar" ? "تم استلام رسالتك بنجاح." : "Your message has been sent."}
+              </p>
+            )}
             <Button
               type="submit"
               variant="primary"
-              className="min-h-[48px] w-full sm:w-auto"
+              className="min-h-[48px] w-full sm:w-auto justify-center"
               disabled={status === "sending"}
             >
               {status === "sending"

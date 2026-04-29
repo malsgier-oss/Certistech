@@ -5,9 +5,9 @@ type LogoProps = {
   variant?: "light" | "dark";
 };
 
-const NAVY = "#1F3142";
-const TEAL = "#00C2D8";
-const LIGHT = "#EAF2F6";
+const NAVY = "#1B2A45";
+const TEAL = "#3EC1D3";
+const LIGHT = "#EDF2F8";
 
 export default function Logo({
   className = "",
@@ -29,44 +29,46 @@ export default function Logo({
       <svg
         width={width}
         height={height}
-        viewBox="0 0 200 48"
+        viewBox="0 0 240 56"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
         aria-label="CertisTech"
         className="overflow-visible"
       >
-      {/* Hexagon */}
-      <polygon
-        points="24,4 44,14 44,34 24,44 4,34 4,14"
-        fill="none"
-        stroke={navy}
-        strokeWidth="2"
-      />
-      {/* Checkmark with circuit nodes */}
-      <path
-        d="M14 18 L22 26 L34 14"
-        stroke={teal}
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <circle cx="14" cy="18" r="2" fill={teal} />
-      <circle cx="22" cy="26" r="2" fill={teal} />
-      <circle cx="34" cy="14" r="2" fill={teal} />
-      {/* CERTISTECH: CERTIS in navy, TECH in teal */}
-      <text
-        x="52"
-        y="32"
-        textAnchor="start"
-        fontFamily="inherit"
-        fontSize="14"
-        fontWeight="700"
-        letterSpacing="0.05em"
-      >
-        <tspan fill={navy}>CERTIS</tspan>
-        <tspan fill={teal}>TECH</tspan>
-      </text>
-    </svg>
+        <g transform="translate(3,3)">
+          <path
+            d="M22 1.5H41L52 10V39L41 47.5H22L11 39V10L22 1.5Z"
+            fill="none"
+            stroke={navy}
+            strokeWidth="2"
+            strokeLinejoin="round"
+            strokeLinecap="round"
+          />
+          <path
+            d="M11 10L22 18L33 10M22 18V47.5"
+            stroke={navy}
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+          <path d="M33 10L52 10M33 18L52 18M33 26L52 26" stroke={teal} strokeWidth="2" strokeLinejoin="round" />
+          <circle cx="37" cy="34" r="2.5" fill={teal} />
+          <circle cx="23" cy="10" r="2.5" fill={teal} />
+        </g>
+
+        <text
+          x="66"
+          y="37"
+          textAnchor="start"
+          fontFamily="inherit"
+          fontSize="17"
+          fontWeight="700"
+          letterSpacing="0.06em"
+        >
+          <tspan fill={navy}>CERTIS</tspan>
+          <tspan fill={teal}>TECH</tspan>
+        </text>
+      </svg>
     </span>
   );
 }

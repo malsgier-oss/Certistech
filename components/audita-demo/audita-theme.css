@@ -1,47 +1,45 @@
-/* Audita Demo - Light theme only */
+/* Audita Demo - integrated modern shell */
 .audita-demo {
-  color-scheme: light;
-  --audita-title: #f3f3f3;
-  --audita-sidebar: #e8e8e8;
-  --audita-content: #ffffff;
-  --audita-fg: #1e1e1e;
-  --audita-dim: #333333;
-  --audita-alt-row: #f8f8f8;
-  --audita-border: #e0e0e0;
-  --audita-btn-hover: #e0e0e0;
-  --audita-btn-pressed: #d0d0d0;
-  --audita-accent: #0078d4;
-  --audita-accent-hover: #106ebe;
-  --audita-success: #28a745;
-  --audita-progress: #107c10;
-  --audita-error: #c50f1f;
-  --audita-warning-bg: #fff3cd;
-  --audita-warning-border: #ffc107;
-  --audita-warning-text: #856404;
+  color-scheme: dark;
+  --audita-title: #ecf2f8;
+  --audita-sidebar: #101c2f;
+  --audita-content: #0c1525;
+  --audita-fg: #eaf2f8;
+  --audita-dim: #8fa0b4;
+  --audita-alt-row: #111f32;
+  --audita-border: rgba(180, 191, 204, 0.24);
+  --audita-btn-hover: #1b2a42;
+  --audita-btn-pressed: #16253c;
+  --audita-accent: #3ec1d3;
+  --audita-accent-hover: #56d0de;
+  --audita-success: #35d89a;
+  --audita-progress: #35d89a;
+  --audita-error: #f97373;
+  --audita-warning-bg: rgba(247, 184, 79, 0.18);
+  --audita-warning-border: rgba(247, 184, 79, 0.45);
+  --audita-warning-text: #f8c26a;
   --audita-disabled: #6b7280;
-  --audita-error: #c50f1f;
 }
 
-/* Light backgrounds for all form controls */
 .audita-demo input,
 .audita-demo select,
 .audita-demo textarea {
-  background-color: #ffffff !important;
-  color: #1e1e1e !important;
+  background-color: #0e1a2c !important;
+  color: #eaf2f8 !important;
+  border-color: rgba(180, 191, 204, 0.22) !important;
 }
 
 .audita-demo input::placeholder,
 .audita-demo textarea::placeholder {
-  color: #6b7280;
+  color: #8fa0b4;
 }
 
 .audita-demo select option {
-  background-color: #ffffff;
-  color: #1e1e1e;
+  background-color: #0e1a2c;
+  color: #ecf2f8;
 }
 
-/* Secondary buttons: explicit light background */
 .audita-demo button[style*="borderColor"]:not([style*="var(--audita-accent)"]) {
-  background-color: #ffffff;
-  color: #1e1e1e;
+  background-color: #0f1b2f !important;
+  color: #ecf2f8;
 }
