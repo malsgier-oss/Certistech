@@ -269,3 +269,400 @@ section {
   animation: comingSoonOrbit 28s linear infinite;
   transform-origin: center;
 }
+
+/* --- Spectacular coming soon (Option A) --- */
+.coming-soon-stage {
+  --orbit-speed: 1;
+  isolation: isolate;
+}
+
+.coming-soon-stage:hover {
+  --orbit-speed: 0.52;
+}
+
+.coming-soon-bg-mesh {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 80% 50% at 20% 40%, rgb(62 193 211 / 22%), transparent 55%),
+    radial-gradient(ellipse 70% 45% at 85% 20%, rgb(200 184 138 / 18%), transparent 50%),
+    radial-gradient(ellipse 60% 40% at 50% 95%, rgb(62 193 211 / 12%), transparent 45%),
+    radial-gradient(ellipse 50% 35% at 70% 60%, rgb(99 102 241 / 8%), transparent 40%);
+  background-size: 140% 140%, 130% 130%, 120% 120%, 100% 100%;
+  background-position: 0% 0%, 100% 0%, 50% 100%, 80% 50%;
+  animation: comingSoonMeshShift 28s ease-in-out infinite;
+}
+
+.coming-soon-grid-pattern {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image:
+    linear-gradient(rgb(62 193 211 / 35%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(62 193 211 / 35%) 1px, transparent 1px);
+  background-size: 48px 48px;
+  animation: comingSoonGridPulse 10s ease-in-out infinite;
+}
+
+.coming-soon-noise {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: comingSoonNoiseShift 0.2s steps(2) infinite;
+}
+
+.coming-soon-particle-hub {
+  position: absolute;
+  left: 50%;
+  top: 42%;
+  width: 0;
+  height: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+@media (min-width: 640px) {
+  .coming-soon-particle-hub {
+    top: 40%;
+  }
+}
+
+.coming-soon-particle-orbit {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  animation-name: comingSoonParticleSpin;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(var(--orbit-dur) * var(--orbit-speed, 1));
+  animation-delay: var(--orbit-delay, 0s);
+  will-change: transform;
+}
+
+.coming-soon-particle-orbit--reverse {
+  animation-direction: reverse;
+}
+
+.coming-soon-particle-shape {
+  display: block;
+  transform: translate(0, calc(-1 * var(--orbit-r)));
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--accent) 40%, transparent));
+}
+
+.coming-soon-holo {
+  position: absolute;
+  inset: -8%;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 4;
+  overflow: hidden;
+  mix-blend-mode: screen;
+  opacity: 0.35;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    color-mix(in srgb, var(--accent) 12%, transparent) 2px,
+    color-mix(in srgb, var(--accent) 12%, transparent) 3px
+  );
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    black 35%,
+    black 65%,
+    transparent 100%
+  );
+  mask-size: 100% 40%;
+  mask-repeat: no-repeat;
+  mask-position: 0 -20%;
+  animation: comingSoonHoloMask 5.5s ease-in-out infinite, comingSoonHoloShimmer 3s ease-in-out infinite;
+}
+
+.coming-soon-holo-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 0%,
+    color-mix(in srgb, var(--accent) 35%, transparent) 45%,
+    color-mix(in srgb, var(--gold) 40%, transparent) 52%,
+    transparent 100%
+  );
+  background-size: 200% 200%;
+  animation: comingSoonHoloGradient 8s ease-in-out infinite;
+  opacity: 0.5;
+}
+
+.perspective-container {
+  perspective: 1100px;
+  perspective-origin: 50% 45%;
+}
+
+.shield-3d-wrap {
+  transform-style: preserve-3d;
+  animation: comingSoonShield3d 16s ease-in-out infinite;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.coming-soon-stage:hover .shield-3d-wrap {
+  animation-play-state: paused;
+  transform: rotateX(14deg) rotateY(-22deg) scale(1.06);
+}
+
+.coming-soon-orbit-draw {
+  stroke-dasharray: 339.3;
+  stroke-dashoffset: 339.3;
+  animation: comingSoonDrawRing 2.4s cubic-bezier(0.33, 1, 0.68, 1) 0.9s forwards;
+}
+
+.coming-soon-orbit-reverse {
+  animation: comingSoonOrbitReverse 38s linear infinite;
+  transform-origin: center;
+}
+
+.coming-soon-shadow-blob {
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  width: 55%;
+  height: 18%;
+  transform: translateX(-50%) translateZ(-40px) rotateX(72deg);
+  background: radial-gradient(ellipse at center, rgb(0 0 0 / 55%), transparent 70%);
+  filter: blur(12px);
+  opacity: 0.65;
+  animation: comingSoonShadowPulse 16s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.entrance-logo {
+  opacity: 0;
+  transform: translateY(-28px);
+  animation: comingSoonEntranceLogo 1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.entrance-particle {
+  opacity: 0;
+  animation: comingSoonEntranceParticle 1.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: var(--entrance-delay, 0.15s);
+}
+
+.entrance-shield-wrap {
+  opacity: 0;
+  animation: comingSoonEntranceShield 1.35s cubic-bezier(0.34, 1.56, 0.64, 1) 0.35s forwards;
+}
+
+.entrance-title {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: comingSoonEntranceFadeUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) 1.05s forwards;
+}
+
+.entrance-sub {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: comingSoonEntranceFadeUp 0.95s cubic-bezier(0.22, 1, 0.36, 1) 1.35s forwards;
+}
+
+@keyframes comingSoonMeshShift {
+  0%,
+  100% {
+    background-position: 0% 20%, 100% 0%, 50% 100%, 30% 40%;
+    opacity: 1;
+  }
+  33% {
+    background-position: 30% 0%, 70% 40%, 20% 80%, 90% 20%;
+    opacity: 0.92;
+  }
+  66% {
+    background-position: 10% 60%, 90% 10%, 70% 60%, 50% 70%;
+    opacity: 1;
+  }
+}
+
+@keyframes comingSoonGridPulse {
+  0%,
+  100% {
+    opacity: 0.055;
+  }
+  50% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes comingSoonNoiseShift {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-2%, 2%);
+  }
+}
+
+@keyframes comingSoonParticleSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes comingSoonHoloMask {
+  0%,
+  100% {
+    mask-position: 50% 120%;
+  }
+  50% {
+    mask-position: 50% -30%;
+  }
+}
+
+@keyframes comingSoonHoloShimmer {
+  0%,
+  100% {
+    opacity: 0.22;
+  }
+  50% {
+    opacity: 0.42;
+  }
+}
+
+@keyframes comingSoonHoloGradient {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+@keyframes comingSoonShield3d {
+  0%,
+  100% {
+    transform: rotateX(6deg) rotateY(-10deg);
+  }
+  25% {
+    transform: rotateX(-4deg) rotateY(8deg);
+  }
+  50% {
+    transform: rotateX(5deg) rotateY(14deg);
+  }
+  75% {
+    transform: rotateX(-6deg) rotateY(-6deg);
+  }
+}
+
+@keyframes comingSoonDrawRing {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes comingSoonOrbitReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes comingSoonShadowPulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: translateX(-50%) translateZ(-40px) rotateX(72deg) scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: translateX(-50%) translateZ(-40px) rotateX(72deg) scale(1.08);
+  }
+}
+
+@keyframes comingSoonEntranceLogo {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes comingSoonEntranceParticle {
+  from {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes comingSoonEntranceShield {
+  from {
+    opacity: 0;
+    transform: scale(0.38);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes comingSoonEntranceFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .coming-soon-bg-mesh,
+  .coming-soon-grid-pattern,
+  .coming-soon-noise,
+  .coming-soon-particle-orbit,
+  .coming-soon-particle-orbit--reverse,
+  .coming-soon-orbit,
+  .coming-soon-orbit-reverse,
+  .coming-soon-float,
+  .coming-soon-glow,
+  .coming-soon-holo,
+  .coming-soon-holo-gradient,
+  .shield-3d-wrap,
+  .coming-soon-shadow-blob {
+    animation: none !important;
+  }
+
+  .coming-soon-orbit-draw {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .coming-soon-stage:hover .shield-3d-wrap {
+    transform: none;
+  }
+
+  .entrance-logo,
+  .entrance-particle,
+  .entrance-shield-wrap,
+  .entrance-title,
+  .entrance-sub {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
