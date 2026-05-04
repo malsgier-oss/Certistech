@@ -225,3 +225,47 @@ section {
       radial-gradient(circle at 50% 70%, rgb(9 15 25 / 94%), var(--background) 72%);
   }
 }
+
+@keyframes comingSoonFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes comingSoonGlow {
+  0%,
+  100% {
+    opacity: 0.35;
+    filter: blur(0);
+  }
+  50% {
+    opacity: 0.85;
+    filter: blur(0.5px);
+  }
+}
+
+@keyframes comingSoonOrbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.coming-soon-float {
+  animation: comingSoonFloat 5s ease-in-out infinite;
+}
+
+.coming-soon-glow {
+  animation: comingSoonGlow 3.5s ease-in-out infinite;
+}
+
+.coming-soon-orbit {
+  animation: comingSoonOrbit 28s linear infinite;
+  transform-origin: center;
+}

@@ -35,13 +35,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       suppressHydrationWarning
       data-locale={initialLocale}
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){var p=location.pathname;var l=p.startsWith('/en')?'en':'ar';document.documentElement.lang=l;document.documentElement.dir=l==='en'?'ltr':'rtl';document.documentElement.dataset.locale=l;})();`,
-          }}
-        />
-      </head>
       <body className="min-h-screen antialiased bg-surface surface-surface-gradient">{children}</body>
     </html>
   );
